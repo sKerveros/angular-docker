@@ -1,0 +1,36 @@
+{
+	"name": "angularProject2",
+	"build":{
+		"dockerfile": "Dockerfile"
+	},
+	"workspaceMount":  "source=.,target=/angular-app,type=bind,consistency=delegated",
+	"workspaceFolder": "/angular-app",
+	"appPort": ["127.0.0.1:4300:4200"],
+	"postCreateCommand": "ng new app --routing=true --standalone=true --strict=true --style=css --ssr=false",
+	"postStartCommand": "cd app && ng serve --host 0.0.0.0 --port 4200 --poll 1000",
+	"customizations": {
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				"streetsidesoftware.code-spell-checker",
+				"tyriar.vscode-sort-lines",
+				"formulahendry.auto-rename-tag",
+				"formulahendry.auto-close-tag",
+				"esbenp.prettier-vscode",
+				"eamodio.gitlens",
+				"dbaeumer.vscode-eslint",
+				"quicktype.quicktype",
+				"Gruntfuggly.todo-tree",
+				"wayou.vscode-todo-highlight",
+				"Angular.ng-template",
+  				"meganrogge.template-string-converter",
+  				"nrwl.angular-console",
+				"johnpapa.angular2",
+				"sibiraj-s.vscode-scss-formatter",
+				"mikael.angular-beastcode",
+				"christian-kohler.path-intellisense",
+				"rangav.vscode-thunder-client"
+			]
+		}
+	}
+}
